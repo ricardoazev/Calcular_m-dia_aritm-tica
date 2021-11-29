@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div class="container">
+          <div class="title">Calcular média aritmética</div>
+        <div class="input">
+          <label>Português:</label>
+          <input type="number" name="" id="n1" min="0.0" max="10.0" placeholder="digite a nota" />
+        </div>
+        <div class="input">
+          <label> Matemática:</label>
+          <input type="number" name="" id="n2" min="0.0" max="10.0" placeholder="digite a nota" />
+        </div>
+        <div class="input">
+          <label>História:</label>
+          <input type="number" name="" id="n3" min="0.0" max="10.0" placeholder="digite a nota" />
+        </div>
+        <div class="input">
+          <label>Geografia: </label>
+          <input type="number" name="" id="n4" min="0.0" max="10.0"placeholder="digite a nota" />
+        </div>
+        <div class="input">
+          <label>Ciência:</label>
+          <input type="number" name="" id="n5" min="0.0" max="10.0" placeholder="digite a nota" />
+        </div>
+        <button onclick="clicar()">Calcular</button>
+        <div class="result" id="res"> Resultado :</div>
+      </div>
+    </main>
+    <script>
+      var n1 = document.querySelector("#n1");
+      var n2 = document.querySelector("#n2");
+      var n3 = document.querySelector("#n3");
+      var n4 = document.querySelector("#n4");
+      var n5 = document.querySelector("#n5");
+      // var resultado = document.querySelector('div')
+
+      function clicar() {
+        var resultado =
+          (parseInt(n1.value) +
+            parseInt(n2.value) +
+            parseInt(n3.value) +
+            parseInt(n4.value) +
+            parseInt(n5.value)) /
+          5;
+        var res = document.getElementById("res");
+        res.innerText = `sua nota é ${resultado}`;
+
+        if (resultado >= 6) {
+          res.innerHTML = `Parabéns aprovado!!! ${resultado}`;
+        } else {
+          res.innerHTML = `Reprovado!!! ${resultado}`;
+        }
+      }
+    </script>
+    
+  </body>
+</html>
